@@ -158,7 +158,8 @@ section {
     position: relative;
     width: 100%;
     height: 50vh;
-    margin-top: 70px; /* fixed-top navbar 보정 */
+    margin-top: 0; /* 70px에서 0으로 변경 */
+    padding-top: 70px; /* navbar 높이만큼 padding 추가 */
 
     background-image: url("../images/intro-main.png"),
                       linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
