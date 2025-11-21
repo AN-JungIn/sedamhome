@@ -60,7 +60,7 @@ function initializeNavbarScroll() {
 }
 
 /* -----------------------------------------------------
-   3. 부드러운 스크롤 (앵커 링크)
+   3. 부드러운 스크롤 (앵커 링크) - 개선됨
 ----------------------------------------------------- */
 function initializeSmoothScroll() {
     // 모든 앵커 링크에 부드러운 스크롤 적용
@@ -71,25 +71,26 @@ function initializeSmoothScroll() {
             // #만 있는 경우 제외
             if (href === "#" || href === "") return;
             
-            e.preventDefault();
-            
             const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
+                e.preventDefault(); // 기본 동작 막기
+                
                 const navbar = document.querySelector(".navbar");
-                const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                const targetPosition = targetElement.offsetTop - navbarHeight;
+                const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                
+                // 부드러운 스크롤 애니메이션
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
                 
                 window.scrollTo({
                     top: targetPosition,
-                    behavior: "smooth"
+                    behavior: "smooth" // 부드러운 애니메이션
                 });
 
-                // 모바일에서 네비게이션 메뉴 닫기 (수정됨)
+                // 모바일에서 네비게이션 메뉴 닫기
                 const navbarCollapse = document.getElementById("navbarNav");
                 if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-                    // Bootstrap 5 방식으로 메뉴 닫기
                     const navbarToggler = document.querySelector(".navbar-toggler");
                     if (navbarToggler) {
                         navbarToggler.click();
@@ -251,3 +252,4 @@ function initializePhoneTracking() {
         });
     });
 }
+
