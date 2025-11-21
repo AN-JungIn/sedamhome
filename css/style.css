@@ -17,16 +17,29 @@
     --light-color: #f8f9fa;
 }
 
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 1.8;
-    color: #212529;
-    overflow-x: hidden;
-    background: #f8f9fa;
+/* ========================================
+   전역 스타일
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;  /* ⬅ 추가 */
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.8;
+    color: #212529;
+    overflow-x: hidden;   /* 이미 있었는데 그대로 두고 */
+    max-width: 100%;      /* ⬅ 추가 (모바일에서 더 넓어지는 것 방지) */
+    background: #f8f9fa;
 }
 
 section {
@@ -809,3 +822,16 @@ section {
     transform: scale(1.02);
 }
 
+/* 모바일에서 가로 스크롤 방지용 세부 처리 */
+.hero-section,
+.intro-banner,
+.footer-section {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* 혹시 이미지가 vw보다 커지는 것 방지 */
+img {
+    max-width: 100%;
+    height: auto;
+}
