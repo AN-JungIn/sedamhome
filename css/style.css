@@ -684,7 +684,7 @@ section[id] {
         right: 20px;
         width: 50px;
         height: 50px;
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     .scroll-to-top {
@@ -716,7 +716,7 @@ section[id] {
 
     /* 안내사항 이미지 크기 증가 */
     .info-img {
-        max-width: 280px !important;
+        max-width:  400px !important;
     }
 
     .advantage-main-img {
@@ -776,8 +776,8 @@ section[id] {
 
     /* hero 섹션 높이 증가 (배경 전체 보이게) */
     .hero-full {
-        min-height: 60vh !important;
-        height: 60vh !important;
+        min-height: 80vh !important;
+        height: 80vh !important;
         margin-top: 0;
         padding-top: 60px;
     }
@@ -862,6 +862,7 @@ section[id] {
         padding: 0.65rem 1rem !important;
     }
 }
+
 /* ========================================
    추가 유틸리티
 ======================================== */
@@ -990,4 +991,3 @@ img {
         padding: 2rem 1.5rem;
     }
 }
-
