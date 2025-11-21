@@ -313,7 +313,7 @@ section {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width: 450px;   /* .service-img, .service-detail-img 과 동일 */
+    max-width: 500px;   /* .service-img, .service-detail-img 과 동일 */
     height: auto;
 }
 
@@ -907,3 +907,4 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
