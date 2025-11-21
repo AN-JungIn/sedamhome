@@ -716,7 +716,7 @@ section[id] {
 
     /* 안내사항 이미지 크기 증가 */
     .info-img {
-        max-width: 200px !important;
+        max-width: 280px !important;
     }
 
     .advantage-main-img {
@@ -757,14 +757,16 @@ section[id] {
 
     /* 예약 카드 제목 텍스트 정렬 */
     .method-card h4 {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         white-space: nowrap;
     }
 
-    /* 버튼 텍스트 자연스럽게 줄바꿈 */
+    /* 버튼 텍스트 크기 줄이고 패딩 조정 */
     .method-card .btn {
-        white-space: normal;
-        line-height: 1.4;
+        font-size: 0.9rem !important;
+        padding: 0.7rem 1.2rem !important;
+        white-space: nowrap;
+        line-height: 1.3;
     }
 
     .reservation-section .method-icon i,
@@ -772,12 +774,20 @@ section[id] {
         font-size: 2.3rem;
     }
 
-    /* hero 섹션 높이 고정 (배경 안 줄어들게) */
+    /* hero 섹션 높이 증가 (배경 전체 보이게) */
     .hero-full {
-        min-height: 50vh !important;
-        height: 50vh !important;
+        min-height: 60vh !important;
+        height: 60vh !important;
         margin-top: 0;
         padding-top: 60px;
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
     }
 
     .hero-bottom-buttons {
@@ -811,7 +821,7 @@ section[id] {
 
     /* 더 작은 화면에서 안내사항 이미지 */
     .info-img {
-        max-width: 150px !important;
+        max-width: 220px !important;
     }
 
     .advantage-main-img {
@@ -824,17 +834,17 @@ section[id] {
     }
 
     .hero-title {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     /* 더 작은 화면 hero 높이 조정 */
     .hero-full {
-        min-height: 45vh !important;
-        height: 45vh !important;
+        min-height: 55vh !important;
+        height: 55vh !important;
     }
 
     /* 예약 섹션 더 작은 화면 조정 */
@@ -843,10 +853,15 @@ section[id] {
     }
 
     .method-card h4 {
-        font-size: 1.15rem;
+        font-size: 1.05rem;
+    }
+
+    /* 더 작은 화면 버튼 텍스트 더 줄이기 */
+    .method-card .btn {
+        font-size: 0.85rem !important;
+        padding: 0.65rem 1rem !important;
     }
 }
-
 /* ========================================
    추가 유틸리티
 ======================================== */
@@ -975,3 +990,4 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
