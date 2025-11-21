@@ -816,7 +816,13 @@ section {
     background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%) !important;
 }
 
-/* 모든 이미지 중앙 정렬 */
+/* 모든 이미지 기본을 반응형으로 맞추기 */
+img {
+    max-width: 100%;   /* 부모 너비를 절대 넘지 않게 */
+    height: auto;      /* 비율 유지하면서 줄어들게 */
+}
+
+/* 중앙 정렬은 그대로 유지 */
 .text-center img {
     display: block;
     margin-left: auto;
@@ -928,4 +934,5 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
 
