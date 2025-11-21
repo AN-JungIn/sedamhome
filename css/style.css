@@ -169,7 +169,7 @@ section {
     width: 100%;
     min-height: 60vh;
     margin-top: 0 !important; /* !important로 강제 */
-    margin-bottom: 0; !important;
+    margin-bottom: 0;
     padding: 0;
     padding-top: 70px; /* navbar 높이만큼만 padding */
 
@@ -926,6 +926,7 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
 
 
 
