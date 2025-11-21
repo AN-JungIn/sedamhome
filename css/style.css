@@ -1,0 +1,811 @@
+/* ========================================
+   전역 스타일
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a5d4a;
+    --secondary-color: #2d8b6d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.8;
+    color: #212529;
+    overflow-x: hidden;
+    background: #f8f9fa;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    position: relative;
+}
+
+/* ========================================
+   플로팅 버튼들
+======================================== */
+.floating-reservation-btn {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
+    color: white;
+    padding: 18px 28px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(26, 93, 74, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.floating-reservation-btn:hover {
+    background: linear-gradient(135deg, #2d8b6d 0%, #1a5d4a 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(26, 93, 74, 0.5);
+    color: white;
+}
+
+.floating-phone-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #198754;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(25, 135, 84, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.floating-phone-btn:hover {
+    background: #157347;
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(25, 135, 84, 0.5);
+    color: white;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ========================================
+   네비게이션 바
+======================================== */
+.navbar {
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+.navbar-brand {
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: 700 !important;
+}
+
+.nav-brand-text {
+    color: #1a5d4a !important;
+}
+
+.nav-link {
+    font-weight: 600;
+    padding: 0.3rem 1rem !important;
+    transition: all 0.3s ease;
+    color: #333 !important;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-reservation {
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
+    color: white !important;
+    border-radius: 25px;
+    margin-left: 10px;
+}
+
+.nav-reservation:hover {
+    background: linear-gradient(135deg, #2d8b6d 0%, #1a5d4a 100%);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   메인 히어로 섹션 (배경 + 텍스트 애니메이션)
+======================================== */
+.hero-full {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* 요청한 높이 */
+    margin-top: 70px; /* fixed-top navbar 보정 */
+
+    /* 배경 이미지 + 푸터 색상 그라데이션 */
+    background-image: url("../images/intro-main.png"),
+                      linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
+    background-size: contain, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 텍스트를 섹션 중앙쯤에 */
+    align-items: center;
+}
+
+/* 어두운 반투명 오버레이 */
+.hero-full::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+/* 중앙 텍스트 */
+.hero-text-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    margin-top: -10px;
+
+    /* 부드러운 등장 애니메이션 */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.15s;
+}
+
+/* 하단 버튼 */
+.hero-bottom-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    display: flex;
+    gap: 16px;
+
+    /* 부드러운 등장 애니메이션 (텍스트보다 약간 늦게) */
+    opacity: 0;
+    transform: translate(-50%, 20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* 히어로 타이틀 / 서브타이틀 */
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+}
+
+.hero-title .highlight {
+    color: #2d8bff;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+/* 히어로 버튼 스타일 */
+.hero-btn-blue,
+.hero-btn-yellow {
+    padding: 10px 26px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.hero-btn-blue:hover,
+.hero-btn-yellow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    opacity: 0.98;
+}
+
+/* 히어로용 페이드 인 업 애니메이션 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   섹션 공통 스타일
+======================================== */
+.section-title {
+    font-size: 2.5rem;
+    color: #212529;
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* ========================================
+   소개 섹션
+======================================== */
+.about-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.about-img {
+    max-width: 500px;
+    height: auto;
+}
+
+.info-img {
+    max-width: 450px !important;
+    height: auto;
+}
+
+.highlight-box {
+    border-left: 5px solid var(--primary-color);
+}
+
+.company-info {
+    font-size: 1.05rem;
+}
+
+.company-info a {
+    color: #212529;
+    font-weight: 700;
+}
+
+.company-info a:hover {
+    color: var(--primary-color);
+}
+
+/* ========================================
+   서비스 섹션
+======================================== */
+.services-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.service-img {
+    max-width: 450px;
+    height: auto;
+}
+
+.service-detail-img {
+    max-width: 450px;
+    height: auto;
+}
+
+.call-img {
+    max-width: 450px !important;
+    height: auto;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(26, 93, 74, 0.15);
+    border-color: var(--primary-color);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-banner {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-banner h3 {
+    font-weight: 900;
+}
+
+/* ========================================
+   장점 섹션
+======================================== */
+.advantages-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.advantage-main-img {
+    max-width: 450px !important;
+    height: auto;
+}
+
+.time-img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+}
+
+.advantage-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.advantage-icon {
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* 비교 박스 */
+.comparison-box {
+    margin-top: 4rem;
+}
+
+.comparison-card {
+    transition: all 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+}
+
+.comparison-card ul li {
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ========================================
+   포트폴리오/블로그 섹션
+======================================== */
+.portfolio-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.review-img {
+    max-width: 450px;
+    height: auto;
+}
+
+.blog-button-link {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.blog-button-image {
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.blog-button-link:hover .blog-button-image {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.social-buttons .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-width: 2px;
+}
+
+/* ========================================
+   예약 섹션
+======================================== */
+.reservation-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.reservation-info-box {
+    border: 3px solid var(--primary-color);
+}
+
+.method-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.method-icon {
+    transition: transform 0.3s ease;
+}
+
+.method-card:hover .method-icon {
+    transform: scale(1.1);
+}
+
+.phone-number-large {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.phone-number-large a {
+    transition: color 0.3s ease;
+}
+
+.phone-number-large a:hover {
+    color: #157347 !important;
+}
+
+/* ========================================
+   푸터 - 세담 초록색 배경에 흰색 글자
+======================================== */
+.footer-section {
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%) !important;
+    padding: 3rem 0 1.5rem 0;
+}
+
+.footer-section * {
+    color: #ffffff !important;
+}
+
+.footer-section a:hover {
+    opacity: 0.8;
+}
+
+.footer-section .social-links a {
+    transition: all 0.3s ease;
+}
+
+.footer-section .social-links a:hover {
+    transform: translateY(-5px);
+}
+
+/* ========================================
+   맨 위로 버튼
+======================================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 180px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(26, 93, 74, 0.3);
+    transition: all 0.3s ease;
+    z-index: 998;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+/* ========================================
+   반응형 디자인 - 태블릿
+======================================== */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .time-img {
+        max-width: 280px;
+    }
+
+    .advantage-main-img {
+        max-width: 280px !important;
+    }
+
+    .info-img {
+        max-width: 35px !important;
+    }
+
+    .call-img {
+        max-width: 110px !important;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   반응형 디자인 - 모바일
+======================================== */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0 !important;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .service-card,
+    .advantage-card {
+        padding: 1.5rem;
+    }
+
+    .comparison-card {
+        margin-bottom: 2rem;
+    }
+
+    .floating-reservation-btn {
+        bottom: 80px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+
+    .floating-phone-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .scroll-to-top {
+        bottom: 150px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .nav-reservation {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .about-img,
+    .service-img,
+    .service-detail-img,
+    .time-img,
+    .review-img,
+    .blog-button-image {
+        max-width: 100%;
+    }
+
+    .info-img {
+        max-width: 30px !important;
+    }
+
+    .advantage-main-img {
+        max-width: 100% !important;
+    }
+
+    .call-img {
+        max-width: 90px !important;
+    }
+
+    .hero-full {
+        height: 55vh;
+        margin-top: 60px;
+    }
+
+    .hero-bottom-buttons {
+        bottom: 16px;
+        gap: 10px;
+    }
+
+    .hero-btn-blue,
+    .hero-btn-yellow {
+        padding: 8px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .floating-reservation-btn span {
+        display: none;
+    }
+
+    .floating-reservation-btn {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .time-img {
+        max-width: 100%;
+    }
+
+    .info-img {
+        max-width: 25px !important;
+    }
+
+    .advantage-main-img {
+        max-width: 100% !important;
+    }
+
+    .call-img {
+        max-width: 80px !important;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   추가 유틸리티
+======================================== */
+.btn-primary {
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2d8b6d 0%, #1a5d4a 100%);
+    color: white;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%) !important;
+}
+
+/* 모든 이미지 중앙 정렬 */
+.text-center img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 세담홈케어 서비스 상단 텍스트 */
+.service-adv-wrapper {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.service-adv-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #1e2a28;
+}
+
+.service-adv-underline {
+    width: 55px;
+    height: 4px;
+    background: #1a5d4a; /* 세담 포인트 컬러 */
+    margin: 10px auto 18px auto;
+    border-radius: 4px;
+}
+
+.service-adv-subtitle {
+    color: #616161;
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+}
+
+/* 이미지 */
+.service-detail-img {
+    border-radius: 10px;
+    transition: transform 0.25s ease-in-out;
+}
+
+.service-detail-img:hover {
+    transform: scale(1.02);
+}
+
