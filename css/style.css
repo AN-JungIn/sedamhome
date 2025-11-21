@@ -702,6 +702,43 @@ section {
         max-width: 90px !important;
     }
 
+       /* ================================
+       ⬇⬇⬇ 여기부터 내가 추가한 부분 ⬇⬇⬇
+    ================================= */
+
+    /* 1) 서비스 카드: 모바일에서도 2열 유지 */
+    .services-section .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* 카드 여백/패딩 조금 줄여서 답답함 줄이기 */
+    .services-section .service-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* 2) 예약 섹션: 모바일에서 박스가 글씨에 눌리지 않게 정리 */
+    .reservation-section .reservation-info-box {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem 3rem;
+    }
+
+    .reservation-section .method-card {
+        padding: 1.5rem 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .reservation-section .phone-number-large {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+
+    .reservation-section .method-icon i,
+    .reservation-section .method-icon svg {
+        font-size: 2.3rem;
+    }
+
     .hero-full {
         height: 55vh;
         margin-top: 60px;
@@ -835,3 +872,4 @@ img {
     max-width: 100%;
     height: auto;
 }
+
