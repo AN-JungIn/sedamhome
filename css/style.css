@@ -287,7 +287,7 @@ section {
 }
 
 .info-img {
-    max-width: 450px !important;
+    max-width: 500px !important;
     height: auto;
 }
 
@@ -907,4 +907,3 @@ img {
         padding: 2rem 1.5rem;
     }
 }
-
