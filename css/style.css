@@ -157,7 +157,7 @@ section {
 .hero-full {
     position: relative;
     width: 100%;
-    height: 50vh;
+    min-height: calc(50vh + 70px); /* height에서 min-height로 변경 */
     margin-top: 0; /* 70px에서 0으로 변경 */
     padding-top: 70px; /* navbar 높이만큼 padding 추가 */
 
@@ -272,6 +272,11 @@ section {
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     margin: 15px auto;
     border-radius: 2px;
+}
+
+/* 섹션 스크롤 오프셋 (navbar 높이만큼) */
+section[id] {
+    scroll-margin-top: 70px;
 }
 
 /* ========================================
@@ -908,3 +913,4 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
