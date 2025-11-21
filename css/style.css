@@ -1,3 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
 /* ========================================
    전역 스타일
 ======================================== */
@@ -157,16 +167,18 @@ section {
 .hero-full {
     position: relative;
     width: 100%;
-    min-height: 60vh; /* height를 min-height로 변경하고 조금 더 크게 */
-    margin-top: 0; /* navbar와 붙이기 */
-    padding-top: 70px; /* navbar 높이만큼 padding */
+    min-height: 60vh;
+    margin-top: 0 !important; /* !important로 강제 */
+    margin-bottom: 0; !important;
+    padding: 0;
+    padding-top: 70px; /* navbar 높이만큼만 padding */
 
     background-image: url("../images/intro-main.png"),
                       linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
-    background-size: contain, cover;
+    background-size: auto 100%, cover; /* contain 대신 auto 100% */
     background-repeat: no-repeat, no-repeat;
-    background-position: center center;
-    background-origin: content-box; /* padding 영역 제외하고 배경 시작 */
+    background-position: center top 70px, center center; /* 이미지를 70px 아래부터 시작 */
+    background-clip: border-box;
 
     display: flex;
     flex-direction: column;
@@ -914,5 +926,6 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
 
 
