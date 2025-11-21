@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeScrollToTop();
     initializeNavbarScroll();
     initializeSmoothScroll();
+    initializeFloatingButtons(); // ← DOM 로드 후 실행으로 이동
+    initializeSectionObserver(); // ← 활성화
 });
 
 /* -----------------------------------------------------
@@ -14,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function initializeScrollToTop() {
     const scrollBtn = document.getElementById("scrollToTop");
     
-    if (!scrollBtn) return;
+    if (!scrollBtn) {
+        console.warn("맨 위로 버튼을 찾을 수 없습니다.");
+        return;
+    }
 
     // 스크롤 위치에 따라 버튼 표시/숨김
     window.addEventListener("scroll", () => {
@@ -40,7 +45,10 @@ function initializeScrollToTop() {
 function initializeNavbarScroll() {
     const navbar = document.querySelector(".navbar");
     
-    if (!navbar) return;
+    if (!navbar) {
+        console.warn("네비게이션 바를 찾을 수 없습니다.");
+        return;
+    }
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 50) {
@@ -78,12 +86,13 @@ function initializeSmoothScroll() {
                     behavior: "smooth"
                 });
 
-                // 모바일에서 네비게이션 메뉴 닫기
+                // 모바일에서 네비게이션 메뉴 닫기 (수정됨)
                 const navbarCollapse = document.getElementById("navbarNav");
                 if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                    if (bsCollapse) {
-                        bsCollapse.hide();
+                    // Bootstrap 5 방식으로 메뉴 닫기
+                    const navbarToggler = document.querySelector(".navbar-toggler");
+                    if (navbarToggler) {
+                        navbarToggler.click();
                     }
                 }
             }
@@ -98,7 +107,10 @@ function initializeSectionObserver() {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-link");
     
-    if (sections.length === 0 || navLinks.length === 0) return;
+    if (sections.length === 0 || navLinks.length === 0) {
+        console.warn("섹션 또는 네비게이션 링크를 찾을 수 없습니다.");
+        return;
+    }
 
     const observerOptions = {
         root: null,
@@ -130,11 +142,30 @@ function initializeSectionObserver() {
     });
 }
 
-// 섹션 감지 활성화 (선택적)
-// initializeSectionObserver();
+/* -----------------------------------------------------
+   5. 플로팅 버튼 애니메이션
+----------------------------------------------------- */
+function initializeFloatingButtons() {
+    const floatingBtns = document.querySelectorAll(".floating-reservation-btn, .floating-phone-btn");
+    
+    if (floatingBtns.length === 0) {
+        console.warn("플로팅 버튼을 찾을 수 없습니다.");
+        return;
+    }
+
+    floatingBtns.forEach(btn => {
+        btn.addEventListener("mouseenter", () => {
+            btn.style.transform = "translateY(-5px) scale(1.05)";
+        });
+        
+        btn.addEventListener("mouseleave", () => {
+            btn.style.transform = "translateY(0) scale(1)";
+        });
+    });
+}
 
 /* -----------------------------------------------------
-   5. 이미지 Lazy Loading (선택적)
+   6. 이미지 Lazy Loading (선택적)
 ----------------------------------------------------- */
 function initializeLazyLoading() {
     const images = document.querySelectorAll("img[data-src]");
@@ -156,30 +187,12 @@ function initializeLazyLoading() {
 }
 
 /* -----------------------------------------------------
-   6. 플로팅 버튼 애니메이션 (선택적)
------------------------------------------------------ */
-function initializeFloatingButtons() {
-    const floatingBtns = document.querySelectorAll(".floating-reservation-btn, .floating-phone-btn");
-    
-    floatingBtns.forEach(btn => {
-        btn.addEventListener("mouseenter", () => {
-            btn.style.transform = "translateY(-5px) scale(1.05)";
-        });
-        
-        btn.addEventListener("mouseleave", () => {
-            btn.style.transform = "translateY(0) scale(1)";
-        });
-    });
-}
-
-// 플로팅 버튼 애니메이션 활성화
-initializeFloatingButtons();
-
-/* -----------------------------------------------------
-   7. 서비스 카드 호버 효과 (선택적)
+   7. 서비스 카드 호버 효과
 ----------------------------------------------------- */
 function initializeServiceCards() {
     const serviceCards = document.querySelectorAll(".service-card");
+    
+    if (serviceCards.length === 0) return;
     
     serviceCards.forEach(card => {
         card.addEventListener("mouseenter", function() {
@@ -192,14 +205,13 @@ function initializeServiceCards() {
     });
 }
 
-// 서비스 카드 효과 활성화 (선택적)
-// initializeServiceCards();
-
 /* -----------------------------------------------------
    8. 폼 유효성 검사 (필요시 추가)
 ----------------------------------------------------- */
 function initializeFormValidation() {
     const forms = document.querySelectorAll(".needs-validation");
+    
+    if (forms.length === 0) return;
     
     forms.forEach(form => {
         form.addEventListener("submit", event => {
