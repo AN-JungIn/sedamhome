@@ -935,4 +935,26 @@ img {
     }
 }
 
+/* 안내사항 메인 이미지 전용 – 반응형 크기 설정 */
+.info-main-img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 520px;   /* PC에서 보이는 최대 폭 */
+    height: auto;
+}
+
+/* 태블릿에서 조금만 줄이기 */
+@media (max-width: 992px) {
+    .info-main-img {
+        max-width: 420px;
+    }
+}
+
+/* 모바일에서 더 줄이기 */
+@media (max-width: 576px) {
+    .info-main-img {
+        max-width: 320px;
+    }
+}
 
