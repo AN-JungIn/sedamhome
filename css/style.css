@@ -873,3 +873,59 @@ img {
     height: auto;
 }
 
+/* ============================================
+   PC에서 창 줄일 때 자동 배열 유지
+============================================ */
+
+/* 1200px 이하 → 3열 → 2열로 축소 */
+@media (max-width: 1200px) {
+    .services-section .col-lg-4,
+    .advantage-section .col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* 태블릿 992px 이하 → 2열 → 1열 */
+@media (max-width: 992px) {
+    .services-section .col-md-6,
+    .advantage-section .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* 이미지가 부모 width에 맞게 부드럽게 줄어듦 */
+.service-img,
+.service-detail-img,
+.advantage-main-img,
+.review-img,
+.time-img,
+.blog-button-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* 서비스/장점 카드가 줄어들 때도 레이아웃 유지 */
+.services-section .row,
+.advantage-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 카드 폭 자동 비율 조정 */
+.service-card,
+.advantage-card {
+    width: 100%;
+    height: auto;
+}
+
+/* 중간 PC(1100~1300px)에서도 깨지지 않도록 카드 패딩 조정 */
+@media (max-width: 1300px) {
+    .service-card,
+    .advantage-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
