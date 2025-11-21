@@ -957,4 +957,25 @@ img {
         max-width: 320px;
     }
 }
+/* 안내사항 이미지 – 다른 서비스 이미지와 동일 크기 */
+.info-main-img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;    /* PC 기준 동일 사이즈 */
+    height: auto;
+}
 
+/* 태블릿 */
+@media (max-width: 992px) {
+    .info-main-img {
+        max-width: 300px;
+    }
+}
+
+/* 모바일 */
+@media (max-width: 576px) {
+    .info-main-img {
+        max-width: 240px;
+    }
+}
