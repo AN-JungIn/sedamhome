@@ -619,39 +619,6 @@ section[id] {
 }
 
 /* ========================================
-   반응형 디자인 - 태블릿
-======================================== */
-@media (max-width: 992px) {
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .time-img {
-        max-width: 280px;
-    }
-
-    .advantage-main-img {
-        max-width: 280px !important;
-    }
-
-    .info-img {
-        max-width: 35px !important;
-    }
-
-    .call-img {
-        max-width: 110px !important;
-    }
-
-    .hero-title {
-        font-size: 1.9rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-}
-
-/* ========================================
    반응형 디자인 - 모바일
 ======================================== */
 @media (max-width: 768px) {
@@ -991,3 +958,4 @@ img {
         padding: 2rem 1.5rem;
     }
 }
+
