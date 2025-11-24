@@ -137,6 +137,31 @@ section {
     color: var(--primary-color) !important;
 }
 
+/* 드롭다운 메뉴 스타일 */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.7rem 1.5rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
+    color: white;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+}
+
 .nav-reservation {
     background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
     color: white !important;
@@ -1038,5 +1063,209 @@ img {
     .service-card,
     .advantage-card {
         padding: 2rem 1.5rem;
+    }
+}
+
+/* ========================================
+   서비스 페이지 스타일
+======================================== */
+.service-page-hero {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    margin-top: 70px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 93, 74, 0.7);
+    z-index: 1;
+}
+
+.service-page-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+}
+
+.service-page-hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.service-page-hero p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* 서비스 탭 메뉴 */
+.service-tabs {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+}
+
+.service-tabs .nav-tabs {
+    border: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-tabs .nav-link {
+    border: none;
+    color: #666;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.service-tabs .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.service-tabs .nav-link.active {
+    color: var(--primary-color);
+    background: transparent;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* 서비스 콘텐츠 */
+.service-content {
+    padding: 80px 0;
+    background: #f5f5f5;
+}
+
+/* 서비스 설명 & 이미지 레이아웃 */
+.service-description-section {
+    margin-bottom: 5rem;
+}
+
+.service-description {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-description h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 1.5rem;
+}
+
+.service-description p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.service-main-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* 필요한 것 섹션 */
+.service-requirements-section {
+    margin-top: 5rem;
+}
+
+.service-requirements {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.service-requirements h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 2rem;
+}
+
+.service-requirements ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-requirements ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05rem;
+    color: #555;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.service-requirements ul li:last-child {
+    border-bottom: none;
+}
+
+.service-requirements ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 900;
+    font-size: 1.3rem;
+}
+
+.service-detail-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .service-page-hero {
+        min-height: 300px;
+        margin-top: 60px;
+    }
+    
+    .service-page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .service-page-hero p {
+        font-size: 1rem;
+    }
+    
+    .service-tabs .nav-link {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .service-description,
+    .service-requirements {
+        padding: 2rem 1.5rem;
+    }
+    
+    .service-description h2 {
+        font-size: 1.5rem;
+    }
+    
+    .service-requirements h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-description-section,
+    .service-requirements-section {
+        margin-bottom: 3rem;
     }
 }
