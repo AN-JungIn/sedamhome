@@ -64,27 +64,53 @@
         </div>
     </nav>
 
-    <!-- 메인 히어로 섹션 -->
-    <section id="home" class="hero-full">
-        <!-- 중앙 텍스트 -->
-        <div class="hero-text-center">
-            <h1 class="hero-title">
-                프리미엄 청소전문업체 <span class="highlight">세담홈케어</span>
-            </h1>
-            <p class="hero-subtitle">
-                전문 청소팀이 구석구석 꼼꼼하게 청소하여<br>
-                안전하고 깨끗한 공간을 만들어 드립니다.
-            </p>
-        </div>
+<!-- 메인 히어로 섹션 -->
+<section id="home" class="hero-full">
+    <!-- 이미지 슬라이더 -->
+    <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('images/intro-main-1.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/intro-main-2.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/intro-main-3.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/intro-main-4.png');"></div>
+        <div class="hero-slide" style="background-image: url('images/intro-main-5.png');"></div>
+    </div>
 
-        <!-- 하단 버튼 -->
-        <div class="hero-bottom-buttons">
-            <a href="#reservation" class="btn btn-primary hero-btn-blue">예약하기</a>
-            <a href="http://pf.kakao.com/_qUgkn" target="_blank" class="btn btn-warning hero-btn-yellow">
-                카카오 상담
-            </a>
-        </div>
-    </section>
+    <!-- 슬라이더 컨트롤 -->
+    <button class="hero-slider-prev" aria-label="이전 슬라이드">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button class="hero-slider-next" aria-label="다음 슬라이드">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- 슬라이더 인디케이터 -->
+    <div class="hero-slider-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+    </div>
+
+    <!-- 중앙 텍스트 -->
+    <div class="hero-text-center">
+        <h1 class="hero-title">
+            프리미엄 청소전문업체 <span class="highlight">세담홈케어</span>
+        </h1>
+        <p class="hero-subtitle">
+            전문 청소팀이 구석구석 꼼꼼하게 청소하여<br>
+            안전하고 깨끗한 공간을 만들어 드립니다.
+        </p>
+    </div>
+
+    <!-- 하단 버튼 -->
+    <div class="hero-bottom-buttons">
+        <a href="#reservation" class="btn btn-primary hero-btn-blue">예약하기</a>
+        <a href="http://pf.kakao.com/_qUgkn" target="_blank" class="btn btn-warning hero-btn-yellow">
+            카카오 상담
+        </a>
+    </div>
+</section>
 
     <!-- 회사 소개 섹션 -->
     <section id="about" class="about-section py-5">
@@ -660,6 +686,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
-
 
