@@ -3,6 +3,7 @@
 세담홈클린 반응형 웹
 
 https://an-jungin.github.io/sedamhome/
+https://sedamhome.com/index.html
 
 
 25.11.21 : 데모버전 호스팅/DNS 작업 완료
