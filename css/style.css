@@ -27,9 +27,11 @@ html {
 body {
     font-family: 'Noto Sans KR', sans-serif;
     line-height: 1.8;
-    color: #212529;
+    color: #333;
     overflow-x: hidden;
-    background: #f5f5f5; /* 옅은 회백색으로 변경 */
+    background: #ffffff;
+    font-weight: 400;
+    letter-spacing: -0.02em;
 }
 
 section {
@@ -105,15 +107,17 @@ section {
    네비게이션 바
 ======================================== */
 .navbar {
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.98) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navbar-brand {
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700 !important;
+    letter-spacing: -0.03em;
 }
 
 .nav-brand-text {
@@ -121,58 +125,74 @@ section {
 }
 
 .nav-link {
-    font-weight: 600;
-    padding: 0.3rem 1rem !important;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem !important;
     transition: all 0.3s ease;
-    color: #333 !important;
-    font-size: 1rem;
+    color: #555 !important;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
 }
 
 .nav-link:hover {
     color: var(--primary-color) !important;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .nav-link.active {
     color: var(--primary-color) !important;
-}
-
-/* 드롭다운 메뉴 스타일 */
-.dropdown-menu {
-    border: none;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 0.5rem 0;
-    margin-top: 0.5rem;
-}
-
-.dropdown-item {
-    padding: 0.7rem 1.5rem;
-    font-weight: 500;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.dropdown-item:hover {
-    background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
-    color: white;
-}
-
-.dropdown-toggle::after {
-    margin-left: 0.5rem;
+    font-weight: 600;
 }
 
 .nav-reservation {
     background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
     color: white !important;
-    border-radius: 25px;
-    margin-left: 10px;
+    border-radius: 30px;
+    margin-left: 15px;
+    padding: 0.5rem 1.5rem !important;
+    font-weight: 500;
 }
 
 .nav-reservation:hover {
     background: linear-gradient(135deg, #2d8b6d 0%, #1a5d4a 100%);
     color: white !important;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(26, 93, 74, 0.2);
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 0.8rem 0;
+    margin-top: 0.8rem;
+    min-width: 200px;
+}
+
+.dropdown-item {
+    padding: 0.8rem 1.8rem;
+    font-weight: 400;
+    color: #555;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(26, 93, 74, 0.08) 0%, rgba(45, 139, 109, 0.08) 100%);
+    color: var(--primary-color);
+    padding-left: 2rem;
+}
+
+.dropdown-item.active {
+    background: linear-gradient(135deg, rgba(26, 93, 74, 0.1) 0%, rgba(45, 139, 109, 0.1) 100%);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
 }
 
 /* ========================================
@@ -373,13 +393,15 @@ section {
 .section-title {
     font-size: 2.5rem;
     color: #212529;
+    font-weight: 700;
+    letter-spacing: -0.03em;
 }
 
 .title-underline {
-    width: 80px;
-    height: 4px;
+    width: 60px;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    margin: 15px auto;
+    margin: 20px auto;
     border-radius: 2px;
 }
 
@@ -388,18 +410,16 @@ section[id] {
     scroll-margin-top: 70px;
 }
 
-/* ========================================
-   소개 섹션
-======================================== */
+/* 소개 섹션 */
 .about-section {
-    padding: 100px 0;
-    background: #f5f5f5; /* 옅은 회백색 */
+    padding: 120px 0;
+    background: #ffffff;
 }
 
 /* 서비스 섹션 */
 .services-section {
-    padding: 100px 0;
-    background: #f5f5f5; /* 옅은 회백색 */
+    padding: 120px 0;
+    background: #fafafa;
 }
 
 .about-img {
@@ -409,20 +429,20 @@ section[id] {
 
 /* 장점 섹션 */
 .advantages-section {
-    padding: 100px 0;
-    background: #f5f5f5; /* 옅은 회백색 */
+    padding: 120px 0;
+    background: #ffffff;
 }
 
 /* 포트폴리오 섹션 */
 .portfolio-section {
-    padding: 100px 0;
-    background: #f5f5f5; /* 옅은 회백색 */
+    padding: 120px 0;
+    background: #fafafa;
 }
 
 /* 예약 섹션 */
 .reservation-section {
-    padding: 100px 0;
-    background: #f5f5f5; /* 옅은 회백색 */
+    padding: 120px 0;
+    background: #ffffff;
 }
 
 .info-img {
@@ -481,30 +501,32 @@ section[id] {
 
 .service-card {
     background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 100%;
-    border: 2px solid transparent;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(26, 93, 74, 0.15);
-    border-color: var(--primary-color);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(26, 93, 74, 0.12);
+    border-color: rgba(26, 93, 74, 0.1);
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
-    border-radius: 50%;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem;
-    transition: all 0.3s ease;
+    margin-bottom: 1.8rem;
+    font-size: 1.8rem;
+    color: white;
+    box-shadow: 0 4px 16px rgba(26, 93, 74, 0.2);
 }
 
 .service-icon i {
@@ -548,24 +570,46 @@ section[id] {
 
 .advantage-card {
     background: white;
-    padding: 2.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .advantage-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 48px rgba(26, 93, 74, 0.12);
+    border-color: rgba(26, 93, 74, 0.1);
 }
 
 .advantage-icon {
-    transition: transform 0.3s ease;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(26, 93, 74, 0.1) 0%, rgba(45, 139, 109, 0.1) 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.8rem;
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
-.advantage-card:hover .advantage-icon {
-    transform: scale(1.15) rotate(5deg);
+.advantage-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #212529;
+    letter-spacing: -0.02em;
+}
+
+.advantage-card p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 /* 비교 박스 */
@@ -944,11 +988,18 @@ section[id] {
     background: linear-gradient(135deg, #1a5d4a 0%, #2d8b6d 100%);
     border: none;
     color: white;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    letter-spacing: -0.01em;
 }
 
 .btn-primary:hover {
     background: linear-gradient(135deg, #2d8b6d 0%, #1a5d4a 100%);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(26, 93, 74, 0.25);
 }
 
 .text-primary {
@@ -1085,7 +1136,7 @@ img {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(26, 93, 74, 0.7);
+    background: rgba(26, 93, 74, 0.75);
     z-index: 1;
 }
 
@@ -1098,19 +1149,22 @@ img {
 
 .service-page-hero h1 {
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 700;
     margin-bottom: 1rem;
+    letter-spacing: -0.03em;
 }
 
 .service-page-hero p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     opacity: 0.95;
+    font-weight: 300;
+    letter-spacing: -0.01em;
 }
 
 /* 서비스 탭 메뉴 */
 .service-tabs {
     background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 70px;
     z-index: 100;
@@ -1125,79 +1179,88 @@ img {
 .service-tabs .nav-link {
     border: none;
     color: #666;
-    font-weight: 600;
-    padding: 1rem 1.5rem;
+    font-weight: 500;
+    padding: 1.2rem 1.8rem;
     transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 2px solid transparent;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
 }
 
 .service-tabs .nav-link:hover {
     color: var(--primary-color);
+    background: rgba(26, 93, 74, 0.02);
 }
 
 .service-tabs .nav-link.active {
     color: var(--primary-color);
     background: transparent;
-    border-bottom: 3px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
 }
 
 /* 서비스 콘텐츠 */
 .service-content {
-    padding: 80px 0;
-    background: #f5f5f5;
+    padding: 100px 0;
+    background: #fafafa;
 }
 
 /* 서비스 설명 & 이미지 레이아웃 */
 .service-description-section {
-    margin-bottom: 5rem;
+    margin-bottom: 80px;
 }
 
 .service-description {
     background: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 3.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .service-description h2 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #212529;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
 }
 
 .service-description p {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.9;
     color: #555;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
 }
 
 .service-main-image {
     width: 100%;
     max-width: 450px;
     height: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* 필요한 것 섹션 */
 .service-requirements-section {
-    margin-top: 5rem;
+    margin-top: 80px;
 }
 
 .service-requirements {
     background: white;
-    padding: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    padding: 3.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .service-requirements h3 {
     font-size: 1.8rem;
-    font-weight: 800;
+    font-weight: 700;
     color: #212529;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.03em;
 }
 
 .service-requirements ul {
@@ -1206,12 +1269,13 @@ img {
 }
 
 .service-requirements ul li {
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
-    font-size: 1.05rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
     color: #555;
     position: relative;
-    padding-left: 2rem;
+    padding-left: 2.5rem;
+    letter-spacing: -0.01em;
 }
 
 .service-requirements ul li:last-child {
@@ -1223,16 +1287,16 @@ img {
     position: absolute;
     left: 0;
     color: var(--primary-color);
-    font-weight: 900;
-    font-size: 1.3rem;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .service-detail-image {
     width: 100%;
     max-width: 450px;
     height: auto;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* 모바일 반응형 */
