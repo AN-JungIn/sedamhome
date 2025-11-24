@@ -1175,6 +1175,8 @@ img {
 
 .service-main-image {
     width: 100%;
+    max-width: 450px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
@@ -1227,6 +1229,8 @@ img {
 
 .service-detail-image {
     width: 100%;
+    max-width: 450px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
