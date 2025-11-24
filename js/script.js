@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeSmoothScroll();
     initializeFloatingButtons(); // ← DOM 로드 후 실행으로 이동
     initializeSectionObserver(); // ← 활성화
+    initializeHeroSlider(); // ← 추가
 });
 
 /* -----------------------------------------------------
@@ -253,3 +254,89 @@ function initializePhoneTracking() {
     });
 }
 
+/* -----------------------------------------------------
+   11. 히어로 슬라이더
+----------------------------------------------------- */
+function initializeHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const prevBtn = document.querySelector('.hero-slider-prev');
+    const nextBtn = document.querySelector('.hero-slider-next');
+    const indicators = document.querySelectorAll('.hero-slider-indicators .indicator');
+    
+    if (slides.length === 0) {
+        console.warn("히어로 슬라이드를 찾을 수 없습니다.");
+        return;
+    }
+
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    // 슬라이드 변경 함수
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        indicators[currentSlide].classList.remove('active');
+        
+        currentSlide = index;
+        
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+    }
+
+    // 다음 슬라이드
+    function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        goToSlide(next);
+    }
+
+    // 이전 슬라이드
+    function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        goToSlide(prev);
+    }
+
+    // 자동 슬라이드 시작
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000); // 5초마다 자동 전환
+    }
+
+    // 자동 슬라이드 정지
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    // 이벤트 리스너
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoSlide();
+            startAutoSlide(); // 다시 시작
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    }
+
+    // 인디케이터 클릭
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            goToSlide(index);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+
+    // 마우스 호버 시 자동 슬라이드 정지
+    const heroSection = document.querySelector('.hero-full');
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopAutoSlide);
+        heroSection.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    // 자동 슬라이드 시작
+    startAutoSlide();
+}
