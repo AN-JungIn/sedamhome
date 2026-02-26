@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>세담홈케어 | 프리미엄 홈케어</title>
+  <meta name="description" content="세담홈케어 프리미엄 청소·시공 서비스. 입주청소, 이사청소, 줄눈시공, 나노코팅, 탄성코트, 새집증후군" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 필요 시 세담 기존 폰트 로드 방식으로 교체 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+<a class="brand" href="./index.html" aria-label="세담홈케어 홈">
+        <img class="brand-logo" src="./assets/img/logo.png" alt="세담홈케어 로고"/>
+        <span class="brand-name">세담홈케어</span>
+      </a>
+
+      <nav class="nav" aria-label="주요 메뉴">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">메뉴 열기</span>
+          <span class="burger" aria-hidden="true"></span>
+        </button>
+
+        <div class="nav-menu" id="navMenu">
+<a href="./입주청소/index.html">입주청소</a>
+<a href="./이사청소/index.html">이사청소</a>
+<a href="./줄눈시공/index.html">줄눈시공</a>
+<a href="./나노코팅/index.html">나노코팅</a>
+<a href="./탄성코트/index.html">탄성코트</a>
+<a href="./새집증후군/index.html">새집증후군</a>
+
+          <!-- 네비 카카오 상담(노란색 유지) -->
+          <a class="btn btn-kakao"
+             href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat"
+             data-kakao-link
+             target="_blank" rel="noopener">
+            카카오상담
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero (Full-screen background slider + translucent overlays) -->
+    <section class="hero hero-full">
+      <div class="hero-bg" data-hero-slider aria-hidden="true">
+        <div class="hero-slider">
+          <div class="hero-track" data-hero-track>
+            <div class="hero-slide is-active" data-hero-slide><div class="hero-slide-bg bg-1"></div></div>
+            <div class="hero-slide" data-hero-slide><div class="hero-slide-bg bg-2"></div></div>
+            <div class="hero-slide" data-hero-slide><div class="hero-slide-bg bg-3"></div></div>
+          </div>
+
+          <button type="button" class="hero-nav hero-nav-prev" data-hero-prev aria-label="이전">‹</button>
+          <button type="button" class="hero-nav hero-nav-next" data-hero-next aria-label="다음">›</button>
+          <div class="hero-dots" data-hero-dots aria-label="히어로 슬라이드"></div>
+        </div>
+      </div>
+
+      <div class="hero-overlay hero-overlay-dim" aria-hidden="true"></div>
+      <div class="hero-overlay hero-overlay-left" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+
+          <h1>세담,<br/> 당신이 머물 공간에 대한<br/> 가장 예의 바른 태도</h1>
+
+          <div class="hero-sub">
+            <span class="hero-sub-bar" aria-hidden="true"></span>
+            <p class="hero-sub-text">
+              입주청소부터 전문 시공까지, 당신의 첫 시작을 완벽하게 완성합니다.<br/>
+              프리미엄 토탈 홈케어 솔루션
+            </p>
+          </div>
+
+          <div class="hero-cta">
+            <!-- 문구는 '무료 견적 문의하기'로, 링크는 카카오로 유지 -->
+            <a class="btn btn-primary"
+               href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat"
+               data-kakao-link
+               target="_blank" rel="noopener">
+              무료 견적 문의하기
+            </a>
+            <a class="btn btn-ghost btn-white" href="tel:010-5729-5122">전화 상담</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About + Stats -->
+    <section class="about" id="about">
+      <div class="container about-inner">
+        <div class="about-copy">
+          <p class="eyebrow">ABOUT SEDAM</p>
+          <h2>공간의 가치를 새롭게 정의하는<br/>하이엔드 홈케어 시스템</h2>
+          <p>
+            보이지 않는 곳의 청결부터 내구성을 높이는 전문 시공까지,
+            세담이 앞서갑니다.
+          </p>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">99%</div>
+            <div class="stat-label">고객 만족도</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">20,000+</div>
+            <div class="stat-label">누적 시공</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">스팀&고압 장비</div>
+            <div class="stat-label">전문장비</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">ECO CARE</div>
+            <div class="stat-label">친환경 세제</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Cards -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">OUR SERVICES</p>
+          <h2>세담홈케어 전문 서비스</h2>
+          <p>입주부터 거주까지, 필요한 케어 서비스를 제공합니다.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="card" id="svc-movein">
+            <div class="card-icon" aria-hidden="true">🧽</div>
+            <h3>입주청소</h3>
+            <p>신축 분진/미세 오염 제거 중심. 구역별 정밀 클리닝.</p>
+            <a class="card-link" href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">견적 문의</a>
+          </article>
+
+          <article class="card" id="svc-moving">
+            <div class="card-icon" aria-hidden="true">🚚</div>
+            <h3>이사청소</h3>
+            <p>생활 오염/찌든 때 집중. 옵션 공정으로 확장 가능.</p>
+            <a class="card-link" href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">견적 문의</a>
+          </article>
+
+          <article class="card" id="svc-grout">
+            <div class="card-icon" aria-hidden="true">🧱</div>
+            <h3>줄눈시공</h3>
+            <p>오염 침투 저감 + 라인 정렬로 마감 품질 개선.</p>
+            <a class="card-link" href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">견적 문의</a>
+          </article>
+
+          <article class="card" id="svc-nano">
+            <div class="card-icon" aria-hidden="true">🪞</div>
+            <h3>나노코팅</h3>
+            <p>물때/스케일 관리 부담 완화. 유리/상판 등 적용.</p>
+            <a class="card-link" href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">견적 문의</a>
+          </article>
+
+          <article class="card" id="svc-elastic">
+            <div class="card-icon" aria-hidden="true">🏠</div>
+            <h3>탄성코트</h3>
+            <p>결로/곰팡이 환경 개선 목적. 베란다 등 적용.</p>
+            <a class="card-link" href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">견적 문의</a>
+          </article>
+
+          <article class="card" id="svc-sickhouse">
+            <div class="card-icon" aria-hidden="true">🌿</div>
+            <h3>새집증후군</h3>
+            <p>유해물질/냄새 저감 중심 케어(범위/방식은 추후 확정).</p>
+            <a class="card-link" href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">견적 문의</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before/After -->
+    <section class="change" id="change">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">DRAMATIC CHANGE</p>
+          <h2>시공 전/후 변화를 확인하세요</h2>
+          <p>UI 샘플입니다. 이미지 교체만 하면 그대로 사용 가능합니다.</p>
+        </div>
+
+        <div class="ba-wrap" data-ba>
+          <div class="ba-stage">
+            <img class="ba-img ba-before"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Crect width='100%25' height='100%25' fill='%23cbd5e1'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-size='48' fill='%23334155'%3EBEFORE%3C/text%3E%3C/svg%3E"
+                 alt="시공 전(더미)" />
+            <div class="ba-after-mask" data-ba-mask>
+              <img class="ba-img ba-after"
+                   src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Crect width='100%25' height='100%25' fill='%23a7f3d0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-size='48' fill='%230f172a'%3EAFTER%3C/text%3E%3C/svg%3E"
+                   alt="시공 후(더미)" />
+            </div>
+            <div class="ba-handle" data-ba-handle aria-hidden="true"></div>
+          </div>
+
+          <div class="ba-controls">
+            <label class="sr-only" for="baRange">전후 비교 슬라이더</label>
+            <input id="baRange" type="range" min="0" max="100" value="50" data-ba-range />
+            <div class="ba-caption">
+              <strong>예시: 욕실 바닥 줄눈시공</strong>
+              <span>관리 부담을 낮추고 마감 품질을 개선합니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">PORTFOLIO</p>
+          <h2>시공 현장 갤러리</h2>
+          <p>이미지는 더미입니다. 실제 작업 사진으로 교체하세요.</p>
+        </div>
+
+        <div class="gallery" data-gallery>
+          <button class="gallery-item" type="button" data-img="거실 포세린 타일">
+            <div class="thumb thumb-1" aria-hidden="true"></div>
+            <div class="caption">거실 포세린 타일</div>
+          </button>
+          <button class="gallery-item" type="button" data-img="욕실 벽면 전체">
+            <div class="thumb thumb-2" aria-hidden="true"></div>
+            <div class="caption">욕실 벽면 전체</div>
+          </button>
+          <button class="gallery-item" type="button" data-img="베란다/다용도실">
+            <div class="thumb thumb-3" aria-hidden="true"></div>
+            <div class="caption">베란다/다용도실</div>
+          </button>
+          <button class="gallery-item" type="button" data-img="주방 싱크볼 & 수전">
+            <div class="thumb thumb-4" aria-hidden="true"></div>
+            <div class="caption">주방 싱크볼 & 수전</div>
+          </button>
+        </div>
+
+        <div class="lightbox" data-lightbox hidden>
+          <div class="lightbox-backdrop" data-lightbox-close></div>
+          <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="포트폴리오 이미지">
+            <button class="lightbox-close" type="button" data-lightbox-close aria-label="닫기">×</button>
+            <div class="lightbox-body">
+              <div class="lightbox-img" data-lightbox-img aria-hidden="true"></div>
+              <div class="lightbox-title" data-lightbox-title></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Links (Blog / YouTube) -->
+<section class="work-links" id="work">
+  <div class="container">
+    <div class="section-head">
+      <h2>직접 포스팅하는 세담홈케어의 작업내용</h2>
+      <p>실제 청소 전·후 사진과 고객 후기를 블로그와 유튜브에서 확인하실 수 있습니다.</p>
+    </div>
+
+    <!-- 배너 이미지: 클릭 시 블로그로 이동(원하면 유튜브로 변경 가능) -->
+    <a class="work-card"
+       href="https://blog.naver.com/home_renew"
+       target="_blank" rel="noopener"
+       aria-label="세담홈케어 네이버 블로그로 이동">
+      <!-- TODO: 실제 이미지 경로로 교체 -->
+      <img class="work-banner"
+           src="./assets/img/work-banner.png"
+           alt="세담홈케어 작업내용 배너" />
+    </a>
+
+    <div class="work-actions" aria-label="외부 채널 링크">
+      <a class="link-btn"
+         href="https://blog.naver.com/home_renew"
+         target="_blank" rel="noopener">
+        <span class="link-ico link-ico-naver" aria-hidden="true">N</span>
+        네이버 블로그
+      </a>
+
+      <a class="link-btn"
+         href="https://www.youtube.com/@%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%84%B8%EB%8B%B4"
+         target="_blank" rel="noopener">
+        <span class="link-ico link-ico-yt" aria-hidden="true">▶</span>
+        유튜브 채널
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">SERVICE STANDARD</p>
+          <h2>체계적인 시공 프로세스</h2>
+          <p>상담부터 검수까지, 정확한 기준만을 제시합니다.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step-no">01</div>
+            <div class="step-body">
+              <h3>본사 직영 체제</h3>
+              <p>외주 용역 없는 100% 본사 정직원 균일하고 고도화된 서비스 품질을 보장</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">02</div>
+            <div class="step-body">
+              <h3>투명한 정찰 견적제</h3>
+              <p>정찰제를 시행하며, 신뢰할 수 있는 비용 구조를 제공</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">03</div>
+            <div class="step-body">
+              <h3>구역별 시스템 도입</h3>
+              <p>교차 오염 방지를 위한 무조건 새걸레사용 원칙</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">04</div>
+            <div class="step-body">
+              <h3>실시간 모니터링</h3>
+              <p>육안 확인의 한계를 넘어 모바일 실시간 모니터링 진행</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-no">05</div>
+            <div class="step-body">
+              <h3>친환경 에코 케어</h3>
+              <p>자재별 맞춤형 친환경 세제를 사용하여 인체에 무해한 청정 환경을 조성</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">CUSTOMER REVIEWS</p>
+          <h2>고객 후기</h2>
+          <p>실제 후기 문구로 교체하세요(현재는 더미).</p>
+        </div>
+        <div class="review-slider" data-slider>
+<div class="review-track" data-track>
+  <!-- PAGE 1 (8 cards) -->
+  <div class="review-page">
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">김** 고객님</div>
+          <div class="review-meta">이천 우미린 · 33평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "새집증후군 때문에 걱정이 많았는데, <span class="hl">냄새가 완전히 사라졌어요.</span> 창틀 구석구석 먼지 한 톨 없이 깨끗해서 놀랐습니다."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2024.12.15</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">이** 고객님</div>
+          <div class="review-meta">화성 아너스포레 · 33평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "다른 업체에서 예약을 급하게 변경했는데, <span class="hl">당일 예약</span> 잡아주셨어요. 청소 퀄리티 최고입니다."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2024.12.20</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">박** 고객님</div>
+          <div class="review-meta">남위례역 수자인센트럴 · 24평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "입주청소 여러 번 맡겨봤지만 <span class="hl">이렇게 꼼꼼한 곳은 처음</span>입니다. 전등갓, 배수구까지 분해해서 닦아주셨어요."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2024.12.28</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">최** 고객님</div>
+          <div class="review-meta">역곡 아테움스위첸 · 22평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "사장님이 직접 오셔서 <span class="hl">하나하나 체크</span>해주시는 게 인상적이었어요. 시멘트 가루 완벽 제거, 대만족입니다."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2025.01.02</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">정** 고객님</div>
+          <div class="review-meta">이천 빌리브어바인 · 33평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "<span class="hl">친환경 세제</span>라 아기 있는 집에서도 안심하고 입주할 수 있었어요. 화장실 물때 제거 완벽합니다."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2025.01.05</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">한** 고객님</div>
+          <div class="review-meta">광명 자이더샵 · 30평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "복층이라 걱정했는데 <span class="hl">팀원분들 4분</span>이서 5시간 꼼꼼히 해주셨어요. 계단 틈새까지 완벽!"
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2025.01.08</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">장** 고객님</div>
+          <div class="review-meta">서울 이문아이파크 · 33평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "주방 기름때가 <span class="hl">깔끔하게 정리</span>됐습니다. 마감이 확실히 달라요."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2025.01.10</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="review-card-top">
+        <div>
+          <div class="review-name">문** 고객님</div>
+          <div class="review-meta">검단 금강3차 · 33평</div>
+        </div>
+        <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+      </div>
+      <p class="review-body">
+        "<span class="hl">검수할 때까지 끝까지</span> 책임감 있게 진행해주셨어요."
+      </p>
+      <div class="review-card-bottom">
+        <span class="review-check" aria-hidden="true">✓</span>
+        <span class="review-date">2025.01.12</span>
+        <span class="review-status">시공 완료</span>
+      </div>
+    </article>
+  </div>
+
+<!-- PAGE 2 (8 cards) -->
+<div class="review-page">
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">권** 고객님</div>
+        <div class="review-meta">잠실 르엘 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "추가 요청도 <span class="hl">바로 반영</span>해주셔서 감사했어요. 마감이 깔끔합니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.12</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">배** 고객님</div>
+        <div class="review-meta">광명 철산브리에르 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "이사청소 후 <span class="hl">바로 입주</span> 가능했어요. 냄새도 거의 없었습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.14</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">신** 고객님</div>
+        <div class="review-meta">서울숲아이파크리버 · 24평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "베란다 <span class="hl">곰팡이/결로</span> 쪽 설명이 명확했고, 작업도 꼼꼼했습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.16</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">오** 고객님</div>
+        <div class="review-meta">부천 원종더리브 · 23평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "사진으로 <span class="hl">공유</span>해주셔서 확인하기 좋았고 신뢰가 갔습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.18</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">류** 고객님</div>
+        <div class="review-meta">동탄 자연앤자이 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "냄새/분진이 <span class="hl">확 줄어서</span> 만족합니다. 창틀이 특히 깨끗했어요."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.20</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">임** 고객님</div>
+        <div class="review-meta">인천 계양제일풍경채 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "가격 대비 <span class="hl">퀄리티</span>가 좋았고, 응대가 빠른 편이라 좋았습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.22</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">조** 고객님</div>
+        <div class="review-meta">검단 금강펜테리움 · 38평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "라인/마감이 <span class="hl">확실히</span> 다르네요. 집이 훨씬 깔끔해 보입니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.24</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">홍** 고객님</div>
+        <div class="review-meta">음성자이 · 29평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "상담 답변이 <span class="hl">빠르고 정확</span>해서 진행이 편했습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.26</span><span class="review-status">시공 완료</span></div>
+  </article>
+</div>
+
+<!-- PAGE 3 (8 cards) -->
+<div class="review-page">
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">유** 고객님</div>
+        <div class="review-meta">청담르엘 · 40평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "작업 동선/오염 구역 설명이 <span class="hl">체계적</span>이었고 결과도 만족합니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.28</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">백** 고객님</div>
+        <div class="review-meta">평택 하이센트 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "작업 후 <span class="hl">관리 방법 안내</span>가 좋아서 유지가 쉬울 것 같아요."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.01.30</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">노** 고객님</div>
+        <div class="review-meta">일산 더샵엘로이 · 25평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "현관 타일이 <span class="hl">새 것처럼</span> 변했어요. 라인 정리가 깔끔합니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.02.01</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">남** 고객님</div>
+        <div class="review-meta">방배 원페를라 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "요청사항 반영이 <span class="hl">빠르고</span> 소통이 잘 됐습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.02.03</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">하** 고객님</div>
+        <div class="review-meta">동탄 아테라파밀리에 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "집 분위기가 <span class="hl">확 달라졌어요</span>. 재이용 의사 있습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.02.05</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">강** 고객님</div>
+        <div class="review-meta">송도 힐스테이트 · 25평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "시간 약속 정확했고 <span class="hl">검수까지</span> 깔끔하게 진행했습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.02.07</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">서** 고객님</div>
+        <div class="review-meta">검단 우미린클래스원 · 33평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "나노코팅 후 물때 관리가 <span class="hl">확실히 쉬워졌어요</span>."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.02.09</span><span class="review-status">시공 완료</span></div>
+  </article>
+
+  <article class="review-card">
+    <div class="review-card-top">
+      <div>
+        <div class="review-name">장** 고객님</div>
+        <div class="review-meta">인천 두산위브더센트럴 · 22평</div>
+      </div>
+      <div class="review-stars" aria-label="별점 5점">★★★★★</div>
+    </div>
+    <p class="review-body">
+      "주방/욕실 모두 <span class="hl">디테일</span>이 좋았고 설명도 친절했습니다."
+    </p>
+    <div class="review-card-bottom"><span class="review-check">✓</span><span class="review-date">2025.02.11</span><span class="review-status">시공 완료</span></div>
+  </article>
+</div>
+</div>
+
+          <div class="slider-controls">
+            <button class="btn btn-ghost" type="button" data-prev>이전</button>
+            <div class="dots" data-dots aria-label="후기 슬라이드 이동"></div>
+            <button class="btn btn-ghost" type="button" data-next>다음</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-title">세담홈케어</div>
+        <p class="footer-desc">세심함을 담아 진심으로 청소하는 프리미엄 홈케어 서비스</p>
+        <p class="footer-meta">
+          사업자등록번호: 101-24-51695<br />
+          주소: 인천광역시 서구 가정로 451, 1동 1123호 (가정동, 벨라미센텀시티)
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <div class="footer-h">바로가기</div>
+          <a href="#top">홈</a>
+          <a href="#services">서비스</a>
+          <a href="#portfolio">작업보기</a>
+          <a href="#reviews">후기</a>
+        </div>
+        <div>
+          <div class="footer-h">문의하기</div>
+          <a href="https://pf.kakao.com/_YOUR_CHANNEL_ID/chat" data-kakao-link target="_blank" rel="noopener">카카오상담</a>
+          <a href="tel:010-5729-5122">010-5729-5122</a>
+          <span class="footer-small">평일 09:00 - 18:00<br/>  주말 및 공휴일 상담 가능</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        © <span id="year"></span> 세담홈케어. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
