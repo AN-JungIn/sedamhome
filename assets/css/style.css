@@ -1469,3 +1469,51 @@ button,input,select,textarea{font:inherit}
 .reviews .review-slider{
   touch-action: pan-y;
 }
+
+/* ===== Service pages: hover lift for boxes ===== */
+.service-section .scope-card,
+.service-section .feature-card,
+.service-section .faq-item{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine){
+  .service-section .scope-card:hover,
+  .service-section .feature-card:hover,
+  .service-section .faq-item:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 18px 48px rgba(2,6,23,.14);
+    border-color: color-mix(in srgb, var(--primary-color) 28%, var(--border));
+  }
+}
+
+/* Footer mobile wrapping fix */
+.site-footer,
+.site-footer *{
+  white-space: normal;            /* 줄바꿈 허용 */
+}
+
+.site-footer .footer-meta,
+.site-footer .footer-desc,
+.site-footer .footer-small{
+  overflow-wrap: anywhere;        /* 긴 문자열도 줄바꿈 */
+  word-break: break-word;
+}
+
+/* 링크/전화번호도 가로 넘침 방지 */
+.site-footer a{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 모바일에서 컬럼을 세로로 정렬 */
+@media (max-width: 720px){
+  .site-footer .footer-inner{
+    flex-direction: column;
+    gap: 18px;
+  }
+  .site-footer .footer-links{
+    width: 100%;
+  }
+}
