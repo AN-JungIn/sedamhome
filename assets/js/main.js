@@ -526,6 +526,40 @@
     addGroup(".faq .faq-item", 60, 360);
   } catch {}
 
+    // =========================
+  // FAQ accordion (service pages)
+  // =========================
+  try {
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest?.("[data-faq-q]");
+      if (!btn) return;
+
+      const item = btn.closest(".faq-item");
+      if (!item) return;
+
+      const panel = item.querySelector("[data-faq-a]");
+      if (!panel) return;
+
+      const isOpen = item.getAttribute("data-open") === "true";
+
+      // 단일 오픈 유지(원치 않으면 이 블록 삭제)
+      document.querySelectorAll(".faq-item[data-open='true']").forEach((x) => {
+        if (x === item) return;
+        x.setAttribute("data-open", "false");
+        const p = x.querySelector("[data-faq-a]");
+        if (p) p.setAttribute("hidden", "");
+        const q = x.querySelector("[data-faq-q]");
+        if (q) q.setAttribute("aria-expanded", "false");
+      });
+
+      item.setAttribute("data-open", String(!isOpen));
+      btn.setAttribute("aria-expanded", String(!isOpen));
+
+      if (isOpen) panel.setAttribute("hidden", "");
+      else panel.removeAttribute("hidden");
+    });
+  } catch {}
+  
   // =========================
   // Stats count-up (when visible)
   // =========================
@@ -587,4 +621,5 @@
 
     els.forEach((el) => io.observe(el));
   } catch {}
+  
 })();
