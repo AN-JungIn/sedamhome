@@ -1517,3 +1517,37 @@ button,input,select,textarea{font:inherit}
     width: 100%;
   }
 }
+
+/* Footer mobile layout fix (stack columns) */
+@media (max-width: 720px){
+  /* 전체를 세로로 */
+  .site-footer .footer-inner{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* 오른쪽 링크 영역(바로가기/문의하기)을 1열로 */
+  .site-footer .footer-links{
+    display: grid;
+    grid-template-columns: 1fr;   /* ✅ 2열/3열 금지 */
+    gap: 16px;
+    width: 100%;
+  }
+
+  /* 제목/링크가 글자 단위로 쪼개지지 않게 */
+  .site-footer .footer-h,
+  .site-footer a,
+  .site-footer .footer-small{
+    white-space: normal;
+    word-break: keep-all;          /* ✅ 한글 글자쪼개기 방지 */
+    overflow-wrap: anywhere;       /* 긴 번호/주소는 자연스럽게 줄바꿈 */
+  }
+
+  /* 전화번호는 보기 좋게 */
+  .site-footer a[href^="tel"]{
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+}
