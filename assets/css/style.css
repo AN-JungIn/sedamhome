@@ -1518,36 +1518,202 @@ button,input,select,textarea{font:inherit}
   }
 }
 
-/* Footer mobile layout fix (stack columns) */
-@media (max-width: 720px){
-  /* 전체를 세로로 */
-  .site-footer .footer-inner{
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
+/* =========================
+   BA2 Slider (FINAL)
+   - 3 slides
+   - one slide visible (no peek)
+   - arrows outside shell
+   - dots lower centered
+========================= */
 
-  /* 오른쪽 링크 영역(바로가기/문의하기)을 1열로 */
-  .site-footer .footer-links{
-    display: grid;
-    grid-template-columns: 1fr;   /* ✅ 2열/3열 금지 */
-    gap: 16px;
-    width: 100%;
-  }
+.ba2{ padding: 70px 0; }
 
-  /* 제목/링크가 글자 단위로 쪼개지지 않게 */
-  .site-footer .footer-h,
-  .site-footer a,
-  .site-footer .footer-small{
-    white-space: normal;
-    word-break: keep-all;          /* ✅ 한글 글자쪼개기 방지 */
-    overflow-wrap: anywhere;       /* 긴 번호/주소는 자연스럽게 줄바꿈 */
-  }
+.ba2-shell{
+  position: relative;
+  border-radius: 26px;
+  background: #fff;
+  border: 1px solid rgba(226,232,240,.9);
+  box-shadow: 0 16px 42px rgba(2,6,23,.06);
+  padding: 28px 28px 28px;     /* 아래 dots 공간 확보 */
+  overflow: visible;           /* ✅ 화살표가 밖으로 나와도 보이게 */
+}
 
-  /* 전화번호는 보기 좋게 */
-  .site-footer a[href^="tel"]{
-    font-size: 1.05rem;
-    font-weight: 900;
-    letter-spacing: 0;
+/* viewport: 한 장만 보이게 */
+.ba2-viewport{
+  position: relative;
+  overflow: hidden;            /* ✅ 핵심: 옆 슬라이드 숨김 */
+}
+
+/* track */
+.ba2-track{
+  display: flex;
+  gap: 0;                      /* ✅ 페이지 간격 없음 */
+  transition: transform .35s ease;
+  will-change: transform;
+}
+
+/* slide: 항상 100% */
+.ba2-slide{
+  flex: 0 0 100%;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+/* left (two images) */
+.ba2-left{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  cursor: pointer;             /* ✅ 클릭하면 다음 슬라이드 */
+}
+
+.ba2-card{
+  margin: 0;
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(226,232,240,.9);
+  background: #f8fafc;
+}
+
+.ba2-card img{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.ba2-badge{
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: .86rem;
+  letter-spacing: .02em;
+  color: #fff;
+  z-index: 2;
+}
+.ba2-badge.before{ background: rgba(15,23,42,.72); }
+.ba2-badge.after{ background: var(--primary-color); }
+
+/* right text */
+.ba2-title{
+  margin: 0 0 10px;
+  font-size: 2.1rem;
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+  color: var(--dark-color);
+}
+.ba2-desc{
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+.ba2-points{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+.ba2-points li{
+  position: relative;
+  padding-left: 28px;
+  font-weight: 800;
+  color: var(--dark-color);
+}
+.ba2-points li::before{
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--primary-color);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  line-height: 1;
+  transform: translateY(2px);
+}
+
+/* nav buttons: OUTSIDE shell */
+.ba2-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(226,232,240,.9);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(2,6,23,.12);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--dark-color);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 5;
+}
+.ba2-prev{ left: -70px; }   /* ✅ 박스 밖으로 */
+.ba2-next{ right: -70px; }  /* ✅ 박스 밖으로 */
+
+/* dots: bottom center (lower) */
+.ba2-dots{
+  position: absolute;
+  left: 50%;           /* ✅ 더 밑으로 */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+}
+.ba2-dots { bottom: -20px; }
+.ba2-dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+}
+.ba2-dot.active{
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .ba2-shell{ padding: 22px 18px 70px; }
+  .ba2-nav{ display:none; }            /* 모바일은 스와이프/탭 */
+  .ba2-slide{ grid-template-columns: 1fr; }
+  .ba2-card img{ height: 300px; }
+  .ba2-title{ font-size: 1.7rem; }
+  .ba2-dots{ bottom: 12px; }
+}
+@media (max-width: 520px){
+  .ba2-left{ grid-template-columns: 1fr; }
+  .ba2-card img{ height: 260px; }
+}
+
+/* Nano coating only: 2 scope cards centered */
+.scope-grid.scope-grid-2{
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center; /* ✅ 가운데 정렬 */
+}
+@media (max-width: 980px){
+  .scope-grid.scope-grid-2{
+    grid-template-columns: 1fr; /* 모바일은 1열 */
   }
 }
