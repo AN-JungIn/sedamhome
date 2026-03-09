@@ -245,25 +245,163 @@
   // =========================
   // Before/After slider
   // =========================
-  try {
-    const ba = document.querySelector("[data-ba]");
-    if (ba) {
-      const range = ba.querySelector("[data-ba-range]");
-      const mask = ba.querySelector("[data-ba-mask]");
-      const handle = ba.querySelector("[data-ba-handle]");
+// BA2 slider (FINAL v2) - free prev/next (like hero/reviews)
+(() => {
+  const root = document.querySelector("[data-ba2]");
+  if (!root) return;
 
-      const set = (v) => {
-        const pct = clamp(Number(v), 0, 100);
-        if (mask) mask.style.width = pct + "%";
-        if (handle) handle.style.left = pct + "%";
-      };
+  const track = root.querySelector("[data-ba2-track]");
+  const slides = Array.from(root.querySelectorAll("[data-ba2-slide]"));
+  const dotsWrap = root.querySelector("[data-ba2-dots]");
+  const prev = root.querySelector("[data-ba2-prev]");
+  const next = root.querySelector("[data-ba2-next]");
+  const viewport = root.querySelector("[data-ba2-viewport]") || root;
 
-      if (range) {
-        set(range.value);
-        range.addEventListener("input", (e) => set(e.target.value));
-      }
+  if (!track || slides.length === 0) return;
+
+  let idx = 0;
+
+  const renderDots = () => {
+    if (!dotsWrap) return;
+
+    // create once
+    if (dotsWrap.children.length !== slides.length) {
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "ba2-dot";
+        b.setAttribute("aria-label", `${i + 1}번째 전후 슬라이드`);
+        b.addEventListener("click", () => { go(i); restartAuto(); });
+        dotsWrap.appendChild(b);
+      });
     }
-  } catch {}
+    Array.from(dotsWrap.children).forEach((b, i) => {
+      b.classList.toggle("active", i === idx);
+    });
+  };
+
+  // Auto slide (BA2)
+let autoTimer = null;
+const autoMs = 4000;
+
+const startAuto = () => {
+  stopAuto();
+  autoTimer = setInterval(() => go(idx + 1), autoMs);
+};
+
+const stopAuto = () => {
+  if (autoTimer) clearInterval(autoTimer);
+  autoTimer = null;
+};
+
+const restartAuto = () => startAuto();
+
+// 마우스 올리면 멈춤(원치 않으면 삭제)
+root.addEventListener("mouseenter", stopAuto);
+root.addEventListener("mouseleave", startAuto);
+
+  const go = (i) => {
+    idx = (i + slides.length) % slides.length;
+    track.style.transform = `translateX(${-idx * 100}%)`;
+    renderDots();
+  };
+
+prev?.addEventListener("click", () => { go(idx - 1); restartAuto(); });
+next?.addEventListener("click", () => { go(idx + 1); restartAuto(); });
+
+  // 클릭(이미지 영역) -> 다음. 단, 드래그로 판정되면 클릭 막기
+  let blockClick = false;
+  root.querySelectorAll("[data-ba2-click-next]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      if (blockClick) {
+        e.preventDefault();
+        e.stopPropagation();
+        blockClick = false;
+        return;
+      }
+      go(idx + 1);
+    });
+  });
+
+  // Drag/Swipe (prev/next 자유롭게)
+  let isDown = false;
+  let moved = false;
+  let startX = 0;
+  let base = 0;
+
+  const down = (x, target) => {
+    // 버튼/도트 클릭은 우선
+    if (target?.closest?.("button")) return;
+
+    isDown = true;
+    moved = false;
+    startX = x;
+    base = -idx * 100;
+    track.style.transition = "none";
+    track.classList.add("is-dragging");
+  };
+
+  const move = (x) => {
+    if (!isDown) return;
+
+    const dx = x - startX;
+    if (Math.abs(dx) > 6) moved = true;
+
+    const delta = (dx / viewport.clientWidth) * 100;
+    track.style.transform = `translateX(${base + delta}%)`;
+  };
+
+  const up = (x) => {
+    if (!isDown) return;
+    isDown = false;
+
+    track.classList.remove("is-dragging");
+    track.style.transition = "";
+
+    const dx = x - startX;
+    const threshold = Math.max(60, viewport.clientWidth * 0.12);
+
+    if (moved && Math.abs(dx) > threshold) {
+      blockClick = true;
+      if (dx < 0) go(idx + 1);
+      else go(idx - 1);
+    } else {
+      go(idx);
+    }
+restartAuto();
+  };
+
+  // Pointer events
+  viewport.addEventListener("pointerdown", (e) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    down(e.clientX, e.target);
+  }, { passive: true });
+
+  viewport.addEventListener("pointermove", (e) => move(e.clientX), { passive: true });
+  viewport.addEventListener("pointerup", (e) => up(e.clientX), { passive: true });
+  viewport.addEventListener("pointercancel", (e) => up(e.clientX), { passive: true });
+
+  // Touch fallback
+  viewport.addEventListener("touchstart", (e) => {
+    const t = e.touches?.[0];
+    if (t) down(t.clientX, e.target);
+  }, { passive: true });
+
+  viewport.addEventListener("touchmove", (e) => {
+    const t = e.touches?.[0];
+    if (t) move(t.clientX);
+  }, { passive: true });
+
+  viewport.addEventListener("touchend", (e) => {
+    const t = e.changedTouches?.[0];
+    up(t ? t.clientX : startX);
+  }, { passive: true });
+
+  renderDots();
+  go(0);
+  startAuto();
+})();
 
   // =========================
   // Portfolio lightbox (data-src)
@@ -510,6 +648,7 @@
     addGroup(".stats .stat", 90, 270);
     addGroup(".svc-grid .svc-tile, .card-grid .card", 80, 400);
     addGroup(".change .ba-wrap", 0, 0);
+    addGroup(".ba2-shell", 0, 0);
     addGroup(".gallery .gallery-item", 80, 320);
     addGroup(".work-links .work-card", 0, 0);
     addGroup(".work-links .link-btn", 80, 240);
